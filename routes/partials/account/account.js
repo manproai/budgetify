@@ -1,7 +1,9 @@
 const express = require('express');
 const accountData = require('../../../mock-data/account-data');
+const auth = require('../../../controllers/passport');
 
 const router = express.Router();
+router.use(auth);
 
 
 router.get('/', (req, res) => {

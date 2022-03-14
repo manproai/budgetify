@@ -359,6 +359,16 @@
 				{
 					"name": "GET Users",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGdtYWlsLmNvbSIsIm5hbWUiOiJKb2huIiwic3VybmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzIzMzIwOCwiZXhwIjoxNjQ3MjM2ODA4fQ.6V61yCBLmuwV1_qhceuedPeLzE_prgIictgwm7_nIys",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -387,6 +397,62 @@
 							"port": "3000",
 							"path": [
 								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"12354677\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mymail@gmail.com\",\r\n    \"name\": \"Mike\",\r\n    \"surname\": \"Tyson\",\r\n    \"password\": \"12354677\",\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
 							]
 						}
 					},
@@ -436,6 +502,9 @@
 				{
 					"name": "GET Category",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {

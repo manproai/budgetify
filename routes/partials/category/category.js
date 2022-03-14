@@ -1,6 +1,8 @@
 const express = require('express');
+const auth = require('./../../../controllers/passport');
 
 const router = express.Router();
+router.use(auth);
 
 router.get('/', (req, res) => {
   res.send('Hello World! [GET from category.js]');
