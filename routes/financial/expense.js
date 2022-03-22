@@ -1,6 +1,6 @@
 const express = require('express');
-const expenseData = require('../../../mock-data/expense-data');
-const auth = require('./../../../controllers/passport');
+const expenseData = require('../../mock-data/expense-data');
+const auth = require('../../middlewares/passportAuth');
 
 const router = express.Router();
 router.use(auth);

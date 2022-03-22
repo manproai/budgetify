@@ -2,14 +2,14 @@ const express = require('express');
 
 const router = express.Router();
 
-const usersRouter = require('./partials/account/users');
-const categoryRouter = require('./partials/category/category');
-const expensesRouter = require('./partials/financial/expense');
-const incomeRouter = require('./partials/financial/income');
-const statisticsRouter = require('./partials/statistics/statistics');
-const accountRouter = require('./partials/account/account');
+const usersRouter = require('./user/users');
+const categoryRouter = require('./category/category');
+const expensesRouter = require('./financial/expense');
+const incomeRouter = require('./financial/income');
+const statisticsRouter = require('./statistics/statistics');
+const accountRouter = require('./account/account');
 
-router.use('/users', usersRouter.router);
+router.use('/users', usersRouter);
 router.use('/category', categoryRouter);
 router.use('/expense', expensesRouter);
 router.use('/income', incomeRouter);

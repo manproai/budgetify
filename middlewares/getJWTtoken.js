@@ -4,8 +4,8 @@ function getToken(user){
     const payload = {
         id: user.id,
         email: user.email,
-        name: user.name,
-        surname: user.surname,
+        firstName: user.firstName,
+        lastName: user.lastName,
         role: user.role
       }
     

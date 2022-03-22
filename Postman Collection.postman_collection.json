@@ -11,6 +11,16 @@
 				{
 					"name": "GET All Accounts",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -27,32 +37,23 @@
 					"response": []
 				},
 				{
-					"name": "GET Account by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/account/2",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"account",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "POST Add New Account",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 3,\r\n    \"login\": \"My Rubl\",\r\n    \"password\": \"Password1234\",\r\n    \"currency\": \"Rubl\"\r\n}",
+							"raw": "{\r\n    \"accountName\": \"My Dollars\", \r\n    \"accountCurrency\": \"USD\", \r\n    \"accountAmount\": \"7000\", \r\n    \"accountDescription\": \"This is to keep my Dollars account\", \r\n    \"accountStat\" : \"active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -76,17 +77,27 @@
 				{
 					"name": "DELETE Account",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/account/2",
+							"raw": "localhost:3000/account/6239256e80147435726328eb",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"account",
-								"2"
+								"6239256e80147435726328eb"
 							]
 						}
 					},
@@ -95,11 +106,21 @@
 				{
 					"name": "PUT Update Account",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"login\": \"My Dollar in AUD\",\r\n    \"password\": \"Password1234\",\r\n    \"currency\": \"Australian Dollar\"\r\n}",
+							"raw": "{\r\n    \"accountName\": \"Yen Account\",\r\n    \"accountCurrency\": \"Yen\",\r\n    \"accountAmount\": 6900,\r\n    \"accountDescription\": \"This is to keep my Japanese yen account\",\r\n    \"accountStat\": \"passive\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -107,14 +128,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/account/",
+							"raw": "localhost:3000/account/62393232a66c93820c721e69",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"account",
-								""
+								"62393232a66c93820c721e69"
 							]
 						}
 					},
@@ -128,6 +149,16 @@
 				{
 					"name": "GET Income Records",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -244,6 +275,16 @@
 				{
 					"name": "GET Expense Records",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -364,30 +405,12 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGdtYWlsLmNvbSIsIm5hbWUiOiJKb2huIiwic3VybmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzIzMzIwOCwiZXhwIjoxNjQ3MjM2ODA4fQ.6V61yCBLmuwV1_qhceuedPeLzE_prgIictgwm7_nIys",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/users",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST Users",
-					"request": {
-						"method": "POST",
 						"header": [],
 						"url": {
 							"raw": "localhost:3000/users",
@@ -409,7 +432,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"12354677\"\r\n}",
+							"raw": "{\r\n    \"email\": \"admin1@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -437,7 +460,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"mymail@gmail.com\",\r\n    \"name\": \"Mike\",\r\n    \"surname\": \"Tyson\",\r\n    \"password\": \"12354677\",\r\n    \"role\": \"admin\"\r\n}",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"admin1@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"admin\",\r\n    \"dateOfBirth\": \"17/12/2001\",\r\n    \"country\": \"USA\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -457,42 +480,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "DELETE Users",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/users",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "PUT Update Users",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/users",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -503,7 +490,14 @@
 					"name": "GET Category",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],

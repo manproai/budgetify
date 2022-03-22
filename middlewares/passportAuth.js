@@ -1,4 +1,6 @@
-const db = require('./../mock-data/users-data');
+require('dotenv').config();
+
+const {User} = require('./../models/userModel');
 const passport = require('passport');
 
 const JwtStrategy = require('passport-jwt').Strategy;
@@ -9,8 +11,9 @@ const opts = {
     secretOrKey: process.env.SECRET_KEY_JWT
 }
 
-passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
-    const user = db.getUserByEmail(jwt_payload.email);
+passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
+    const email = jwt_payload.email;
+    const user = await User.findOne({email});
 if(user){
     return done(null, user);
 }
@@ -18,6 +21,5 @@ if(user){
 }));
 
 const auth = passport.authenticate('jwt', {session: false});
-
 
 module.exports = auth;
