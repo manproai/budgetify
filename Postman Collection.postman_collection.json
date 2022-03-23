@@ -16,7 +16,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2FjYjEzYWNhMDM4ZWIyNGY3OGM4YyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI0MywiZXhwIjoxNjQ4MDIzODQzfQ.Qvcovt0JIryuQ10ZU6n_usMMcMkMsp4If4hdwk4xF4U",
 									"type": "string"
 								}
 							]
@@ -44,7 +44,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2FjYjEzYWNhMDM4ZWIyNGY3OGM4YyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI0MywiZXhwIjoxNjQ4MDIzODQzfQ.Qvcovt0JIryuQ10ZU6n_usMMcMkMsp4If4hdwk4xF4U",
 									"type": "string"
 								}
 							]
@@ -82,7 +82,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI1NiwiZXhwIjoxNjQ4MDIzODU2fQ.JKdJDXiIME9r9gg4QBCg2ckKlhKymQ1BDHR6NwXwEQk",
 									"type": "string"
 								}
 							]
@@ -90,14 +90,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/account/6239256e80147435726328eb",
+							"raw": "localhost:3000/account/62393232a66c93820c721e69",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"account",
-								"6239256e80147435726328eb"
+								"62393232a66c93820c721e69"
 							]
 						}
 					},
@@ -111,7 +111,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI1NiwiZXhwIjoxNjQ4MDIzODU2fQ.JKdJDXiIME9r9gg4QBCg2ckKlhKymQ1BDHR6NwXwEQk",
 									"type": "string"
 								}
 							]
@@ -405,7 +405,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2FjYjEzYWNhMDM4ZWIyNGY3OGM4YyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI0MywiZXhwIjoxNjQ4MDIzODQzfQ.Qvcovt0JIryuQ10ZU6n_usMMcMkMsp4If4hdwk4xF4U",
 									"type": "string"
 								}
 							]
@@ -460,7 +460,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"admin1@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"admin\",\r\n    \"dateOfBirth\": \"17/12/2001\",\r\n    \"country\": \"USA\"\r\n}",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"admin2@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"admin\",\r\n    \"dateOfBirth\": \"17/12/2001\",\r\n    \"country\": \"USA\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

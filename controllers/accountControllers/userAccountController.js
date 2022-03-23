@@ -15,49 +15,38 @@ const createAccount =  async (req, res, next) => {
         accountDescription, 
         accountStat
     }   = req.body;
-    
-    if (
-        accountName && 
-        accountCurrency && 
-        accountAmount && 
-        accountDescription && 
-        accountStat
-        ) {
 
-        const isAccount = await Account.findOne({accountCurrency});
+    const isAccount = await Account.findOne({accountName});
 
-        if(isAccount){
-            return next (new Error(`${isAccount.accountName} already exists. Please log in!`));
-        }
-
-        const userID = req.user.id;
-        const account = await Account.create({
-            user: userID,
-            accountName, 
-            accountCurrency, 
-            accountAmount, 
-            accountDescription, 
-            accountStat,
-            accountCreated: new Date().toGMTString()
-        });
-    
-        if (account) {
-            res.status(201).json({
-                message: `Your ${account.accountCurrency} account has been successfully created`,
-                _id: account.id,
-                accountName: account.accountName, 
-                accountCurrency: account.accountCurrency, 
-                accountAmount: account.accountAmount, 
-                accountDescription: account.accountDescription, 
-                accountStat: account.accountStat,
-                accountCreated: account.accountCreated
-        });
-        } else {
-            return next (new Error('Invalid data'));
-        }   
-    } else {
-        return next (new Error('Incomplete data'));
+    if(isAccount){
+        return next (new Error(`${isAccount.accountName} already exists.`));
     }
+
+    const userID = req.user.id;
+    const account = await Account.create({
+        user: userID,
+        accountName, 
+        accountCurrency, 
+        accountAmount, 
+        accountDescription, 
+        accountStat,
+        accountCreated: new Date().toGMTString()
+    });
+
+    if (account) {
+        res.status(201).json({
+            _id: account.id,
+            accountName: account.accountName, 
+            accountCurrency: account.accountCurrency, 
+            accountAmount: account.accountAmount, 
+            accountDescription: account.accountDescription, 
+            accountStat: account.accountStat,
+            accountCreated: account.accountCreated
+    });
+    } else {
+        return next (new Error('Invalid data'));
+    }   
+
     
 };
 
@@ -98,14 +87,10 @@ const deleteAccount = async (req, res, next) => {
 
     const user = await User.findById(req.user.id);
 
-    if (!user) {
-        return next (new Error('User has invalid cridentials'));
-    }
-
     const account = await Account.findById(req.params.id);
 
     if (!account) {
-        return next (new Error('Not found record with this ID'));
+        return next (new Error('Invalid Currency account'));
     }
 
     const savedUserID = account.user.toString();
@@ -115,7 +100,7 @@ const deleteAccount = async (req, res, next) => {
     }
 
     await account.remove();
-    res.status(200).json('Account has been successfully deleted');
+    res.status(200).send('Account has been successfully deleted');
 
 };
 
