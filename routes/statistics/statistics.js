@@ -1,5 +1,5 @@
 const express = require('express');
-const auth = require('./../../../controllers/passport');
+const auth = require('../../middlewares/passportAuth');
 
 const router = express.Router();
 router.use(auth);

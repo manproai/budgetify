@@ -1,6 +1,6 @@
 const express = require('express');
-const incomeData = require('../../../mock-data/income-data');
-const auth = require('./../../../controllers/passport');
+const incomeData = require('../../mock-data/income-data');
+const auth = require('../../middlewares/passportAuth');
 
 const router = express.Router();
 router.use(auth);
