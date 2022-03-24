@@ -67,8 +67,8 @@ describe ('app', () => {
     
 
     describe('GET /users', () => {
-        describe('GET all the users', () => {
-            it('should return all the users given the role is admin', async () => {
+        describe('GET all the users with auth', () => {
+            it('should return all the users given correct auth', async () => {
                 
                 const response = await supertest(app).get('/users/').set(
                     'Authorization',
@@ -78,6 +78,17 @@ describe ('app', () => {
                 expect(response.header['content-type']).toBe(
                     'application/json; charset=utf-8'
                 );
+            });
+        });
+        describe('GET all the users with incorrect auth', () => {
+            it('should return all the users given incorrect auth', async () => {
+                
+                const response = await supertest(app).get('/users/').set(
+                    'Authorization',
+                    `Bearer ${token}123`
+                );
+
+                expect(response.text).toBe('Unauthorized');
             });
         });
     });

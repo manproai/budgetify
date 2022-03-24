@@ -17,7 +17,7 @@ passport.use(new JwtStrategy(opts, async (jwt_payload, done) => {
 if(user){
     return done(null, user);
 }
-    return done(null, false);
+    return done({message: "Unauthorized"}, false);
 }));
 
 const auth = passport.authenticate('jwt', {session: false});
