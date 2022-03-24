@@ -2,6 +2,7 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const {User} = require('../models/userModel');
 const getJWTtoken = require('../middlewares/getJWTtoken');
+const { status } = require('express/lib/response');
 
 
 const createUser =  async (req, res, next) => {
@@ -67,7 +68,7 @@ const loginUser = async (req, res, next) => {
             lastName: user.lastName,
             email: user.email,
             role: user.role,
-            token: `Bearer ${getJWTtoken(user)}`
+            token: getJWTtoken(user)
         });
     } else {
         return next (new Error('Invalid credentials'));
@@ -77,7 +78,7 @@ const loginUser = async (req, res, next) => {
 
 const getUsers = async (req, res) => {
     const users = await User.find({});
-    res.json(users);
+    res.status(200).json(users);
 }
 
 module.exports = {
