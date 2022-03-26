@@ -10,7 +10,9 @@ const errorHandler = require('./middlewares/errorHandler');
 const app = express();
 
 const myLogger = (req, res, next) => {
-  console.log(`Requested or Responded at ${new Date().toString()} - ${req.method}`);
+  console.log(
+    `Requested or Responded at ${new Date().toString()} - ${req.method}`
+  );
   next();
 };
 
