@@ -1,5 +1,6 @@
 const express = require('express');
 
+
 const router = express.Router();
 
 const {
@@ -14,5 +15,9 @@ const auth = require('./../../middlewares/passportAuth');
 router.get('/', auth, adminGuard ,getUsers);
 router.post('/login', loginUser);
 router.post('/register', createUser);
+
+router.get('/hello', (req, res) => {
+  res.status(201).send('Hello');
+});
 
 module.exports = router;
