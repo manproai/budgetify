@@ -16,7 +16,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2FjYjEzYWNhMDM4ZWIyNGY3OGM4YyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI0MywiZXhwIjoxNjQ4MDIzODQzfQ.Qvcovt0JIryuQ10ZU6n_usMMcMkMsp4If4hdwk4xF4U",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0OTA4OCwiZXhwIjoxNjQ4NDUyNjg4fQ.WpkfF7To1dpQxianwpMXnryQwe0Z7mSogNnWrYsTtUU",
 									"type": "string"
 								}
 							]
@@ -24,13 +24,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/account",
+							"raw": "localhost:3000/account/",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"account"
+								"account",
+								""
 							]
 						}
 					},
@@ -44,7 +45,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2FjYjEzYWNhMDM4ZWIyNGY3OGM4YyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI0MywiZXhwIjoxNjQ4MDIzODQzfQ.Qvcovt0JIryuQ10ZU6n_usMMcMkMsp4If4hdwk4xF4U",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0OTA4OCwiZXhwIjoxNjQ4NDUyNjg4fQ.WpkfF7To1dpQxianwpMXnryQwe0Z7mSogNnWrYsTtUU",
 									"type": "string"
 								}
 							]
@@ -53,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"accountName\": \"My Dollars\", \r\n    \"accountCurrency\": \"USD\", \r\n    \"accountAmount\": \"7000\", \r\n    \"accountDescription\": \"This is to keep my Dollars account\", \r\n    \"accountStat\" : \"active\"\r\n}",
+							"raw": "{\r\n    \"accountName\": \"Yen card\", \r\n    \"currencyId\": \"624111e3ecdf1226f6f54f2c\", \r\n    \"accountAmount\": \"7000\", \r\n    \"accountDescription\": \"This is to keep my Dollars account\" \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -82,7 +83,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI1NiwiZXhwIjoxNjQ4MDIzODU2fQ.JKdJDXiIME9r9gg4QBCg2ckKlhKymQ1BDHR6NwXwEQk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0OTA4OCwiZXhwIjoxNjQ4NDUyNjg4fQ.WpkfF7To1dpQxianwpMXnryQwe0Z7mSogNnWrYsTtUU",
 									"type": "string"
 								}
 							]
@@ -90,14 +91,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/account/62393232a66c93820c721e69",
+							"raw": "localhost:3000/account/6238c472dac526acae8dbcd5",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"account",
-								"62393232a66c93820c721e69"
+								"6238c472dac526acae8dbcd5"
 							]
 						}
 					},
@@ -111,7 +112,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI1NiwiZXhwIjoxNjQ4MDIzODU2fQ.JKdJDXiIME9r9gg4QBCg2ckKlhKymQ1BDHR6NwXwEQk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0OTA4OCwiZXhwIjoxNjQ4NDUyNjg4fQ.WpkfF7To1dpQxianwpMXnryQwe0Z7mSogNnWrYsTtUU",
 									"type": "string"
 								}
 							]
@@ -120,7 +121,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"accountName\": \"Yen Account\",\r\n    \"accountCurrency\": \"Yen\",\r\n    \"accountAmount\": 6900,\r\n    \"accountDescription\": \"This is to keep my Japanese yen account\",\r\n    \"accountStat\": \"passive\"\r\n}",
+							"raw": "{\r\n    \"accountName\": \"Yen card\", \r\n    \"currencyId\": \"624111e3ecdf1226f6f54f2c\", \r\n    \"accountAmount\": \"7000\", \r\n    \"accountDescription\": \"This is to keep my Dollars account\" \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -128,14 +129,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/account/62393232a66c93820c721e69",
+							"raw": "localhost:3000/account/6238e35c03f813c34f051608",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"account",
-								"62393232a66c93820c721e69"
+								"6238e35c03f813c34f051608"
 							]
 						}
 					},
@@ -144,17 +145,17 @@
 			]
 		},
 		{
-			"name": "Income Record API",
+			"name": "Transaction API",
 			"item": [
 				{
-					"name": "GET Income Records",
+					"name": "GET Transaction Records",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0Nzg1MSwiZXhwIjoxNjQ4NDUxNDUxfQ.mRXKI7gGv3nIGPLD9ApvVZu2qO7qUcoLWJlJd1vRnpA",
 									"type": "string"
 								}
 							]
@@ -162,171 +163,37 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/income",
+							"raw": "localhost:3000/transaction/",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"income"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Income Record by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/income/1",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"income",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST Add New Income Record",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 3,\r\n    \"category\": \"Investment\",\r\n    \"amount\": 8000\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:3000/income",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"income"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DELETE Income Record",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/income/2",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"income",
-								"2"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "PUT Update Income Record",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"category\": \"Rental Income\",\r\n    \"amount\": 20000\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:3000/income/",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"income",
+								"transaction",
 								""
 							]
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "Expense Record API",
-			"item": [
+				},
 				{
-					"name": "GET Expense Records",
+					"name": "POST Transaction",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0Nzg1MSwiZXhwIjoxNjQ4NDUxNDUxfQ.mRXKI7gGv3nIGPLD9ApvVZu2qO7qUcoLWJlJd1vRnpA",
 									"type": "string"
 								}
 							]
 						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/expense",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"expense"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Expense Record by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:3000/expense/1",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"expense",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST Add New Income Record",
-					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 3,\r\n    \"category\": \"Petrol\",\r\n    \"amount\": 2000\r\n}",
+							"raw": "{\r\n    \"accountId\": \"62413d59289263f46ae0c0d4\",\r\n    \"transactionType\": \"income\",\r\n    \"transactionTitle\": \"Salary\",\r\n    \"categoryId\": \"624152c41187df61e40031a7\",\r\n    \"transactionAmount\": 5000,\r\n    \"transactionDescription\": \"Salary from any company\",\r\n    \"transactionOperationDate\": \"12.12.2016\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -334,45 +201,66 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/expense",
+							"raw": "localhost:3000/transaction/",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"expense"
+								"transaction",
+								""
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "DELETE Expense Record",
+					"name": "DELETE Transaction",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0Nzg1MSwiZXhwIjoxNjQ4NDUxNDUxfQ.mRXKI7gGv3nIGPLD9ApvVZu2qO7qUcoLWJlJd1vRnpA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/expense/2",
+							"raw": "localhost:3000/transaction/6241542c5d3ee1dfefb6f80c",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"expense",
-								"2"
+								"transaction",
+								"6241542c5d3ee1dfefb6f80c"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "PUT Update Expense Record",
+					"name": "PUT Transaction",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0Nzg1MSwiZXhwIjoxNjQ4NDUxNDUxfQ.mRXKI7gGv3nIGPLD9ApvVZu2qO7qUcoLWJlJd1vRnpA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"category\": \"Transport\",\r\n    \"amount\": 1500\r\n}",
+							"raw": "{\r\n    \"accountId\": \"6238d949def5c7a348628d2e\",\r\n    \"transactionType\": \"income\",\r\n    \"transactionTitle\": \"Salary\",\r\n    \"categoryId\": \"624152c41187df61e40031a7\",\r\n    \"transactionAmount\": 125000,\r\n    \"transactionDescription\": \"Salary from any company\",\r\n    \"transactionOperationDate\": \"12.12.2016\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -380,13 +268,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/expense",
+							"raw": "localhost:3000/transaction/624159d2ec250d290a5ea0bf",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"expense"
+								"transaction",
+								"624159d2ec250d290a5ea0bf"
 							]
 						}
 					},
@@ -405,7 +294,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2FjYjEzYWNhMDM4ZWIyNGY3OGM4YyIsImVtYWlsIjoiYWRtaW4yQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODAyMDI0MywiZXhwIjoxNjQ4MDIzODQzfQ.Qvcovt0JIryuQ10ZU6n_usMMcMkMsp4If4hdwk4xF4U",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ1MDMxMiwiZXhwIjoxNjQ4NDUzOTEyfQ.9LUdvnqP1stECzpAdnA7TsJ03YoCBNDxAeyfW-IGm_Q",
 									"type": "string"
 								}
 							]
@@ -460,7 +349,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"admin2@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"admin\",\r\n    \"dateOfBirth\": \"17/12/2001\",\r\n    \"country\": \"USA\"\r\n}",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"admin6@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"admin\",\r\n    \"dateOfBirth\": 2001,\r\n    \"gender\": \"female\",\r\n    \"country\": \"USA\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -494,7 +383,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0NzkxNTM2NCwiZXhwIjoxNjQ3OTE4OTY0fQ.OtKd0C3Q8-lfuxG5AT6H9961DxvX2gSzq8usaTG0nKY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ1MDMxMiwiZXhwIjoxNjQ4NDUzOTEyfQ.9LUdvnqP1stECzpAdnA7TsJ03YoCBNDxAeyfW-IGm_Q",
 									"type": "string"
 								}
 							]
@@ -502,13 +391,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/category",
+							"raw": "localhost:3000/category/",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"category"
+								"category",
+								""
 							]
 						}
 					},
@@ -517,8 +407,27 @@
 				{
 					"name": "POST Category",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0Nzg1MSwiZXhwIjoxNjQ4NDUxNDUxfQ.mRXKI7gGv3nIGPLD9ApvVZu2qO7qUcoLWJlJd1vRnpA",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Salary\",\r\n    \"categoryType\": \"income\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:3000/category",
 							"host": [
@@ -535,16 +444,27 @@
 				{
 					"name": "DELETE Category",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0MDU4OSwiZXhwIjoxNjQ4NDQ0MTg5fQ.S-F0bSvOwGfzWmgqrc-6Qsf5iCPA_RKjVEFaKBGbmdc",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/category",
+							"raw": "localhost:3000/category/624137ee3b4ef782aff84af8",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"category"
+								"category",
+								"624137ee3b4ef782aff84af8"
 							]
 						}
 					},
@@ -553,16 +473,196 @@
 				{
 					"name": "PUT Update Category",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ0MDU4OSwiZXhwIjoxNjQ4NDQ0MTg5fQ.S-F0bSvOwGfzWmgqrc-6Qsf5iCPA_RKjVEFaKBGbmdc",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\": \"Food\",\r\n    \"categoryType\": \"expense\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "localhost:3000/category",
+							"raw": "localhost:3000/category/624138043b4ef782aff84afe",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"category"
+								"category",
+								"624138043b4ef782aff84afe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Currency API",
+			"item": [
+				{
+					"name": "GET Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQzMDg5OSwiZXhwIjoxNjQ4NDM0NDk5fQ.51AohXs79TI948n3YUcsYdJHCsrVMS1rXgmh6MhaYw0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/currency/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"currency",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQzNTA5MSwiZXhwIjoxNjQ4NDM4NjkxfQ.sk47FRxCnQsFG0z75FCNvO5gzxcjQN_fxVpu1AtIhwQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currencyName\": \"AUS\",\r\n    \"currencySymbol\": \"$\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/currency/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"currency",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQzMDg5OSwiZXhwIjoxNjQ4NDM0NDk5fQ.51AohXs79TI948n3YUcsYdJHCsrVMS1rXgmh6MhaYw0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/currency/6240b7cd4280f62236eac118",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"currency",
+								"6240b7cd4280f62236eac118"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQzMDg5OSwiZXhwIjoxNjQ4NDM0NDk5fQ.51AohXs79TI948n3YUcsYdJHCsrVMS1rXgmh6MhaYw0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currencyName\": \"Rubl\",\r\n    \"currencySymbol\": \"₽\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/currency/6241116724674e1abbb5106d",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"currency",
+								"6241116724674e1abbb5106d"
 							]
 						}
 					},
@@ -576,6 +676,16 @@
 				{
 					"name": "GET Statistics",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMzhhYWRlNTY1NzUxOTA4ZDlhNmI4MyIsImVtYWlsIjoiYWRtaW4xQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY0ODQ1MDMxMiwiZXhwIjoxNjQ4NDUzOTEyfQ.9LUdvnqP1stECzpAdnA7TsJ03YoCBNDxAeyfW-IGm_Q",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {

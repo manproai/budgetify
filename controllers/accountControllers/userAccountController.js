@@ -1,5 +1,4 @@
-const { Account } = require('../../models/userAccountModel');
-const { User } = require('../../models/userModel');
+const { Account } = require('../../models/accountModel');
 const { validateAccount } = require('../../validation/validationAccount');
 
 const createAccount = async (req, res, next) => {
@@ -7,63 +6,46 @@ const createAccount = async (req, res, next) => {
   if (error) {
     return next(new Error(error));
   }
-  const {
-    accountName,
-    accountCurrency,
-    accountAmount,
-    accountDescription,
-    accountStat,
-  } = req.body;
+  const { accountName, currencyId, accountAmount, accountDescription } =
+    req.body;
 
-  const isAccount = await Account.findOne({ accountName });
+  const getAvailableAccount = await Account.findOne({ accountName });
 
-  if (isAccount) {
-    return next(new Error(`${isAccount.accountName} already exists.`));
+  if (getAvailableAccount) {
+    return next(
+      new Error(`${getAvailableAccount.accountName} already exists.`)
+    );
   }
 
-  const userID = req.user.id;
-  const account = await Account.create({
-    userId: userID,
-    accountName,
-    accountCurrency,
-    accountAmount,
-    accountDescription,
-    accountStat,
-    accountCreated: new Date().toGMTString(),
-  });
+  try {
+    const userID = req.user.id;
+    const account = await Account.create({
+      userId: userID,
+      accountName,
+      currencyId,
+      accountAmount,
+      accountDescription,
+    });
 
-  if (account) {
     res.status(201).json({
       _id: account.id,
       accountName: account.accountName,
-      accountCurrency: account.accountCurrency,
+      currencyId: account.currencyId,
       accountAmount: account.accountAmount,
       accountDescription: account.accountDescription,
-      accountStat: account.accountStat,
-      accountCreated: account.accountCreated,
+      createdAt: account.createdAt,
+      updatedAt: account.updatedAt,
     });
-  } else {
-    return next(new Error('Invalid data'));
+  } catch (err) {
+    return next(new Error(err));
   }
 };
 
 const updateAccount = async (req, res, next) => {
-  const user = await User.findById(req.user.id);
-
-  if (!user) {
-    return next(new Error('User has invalid cridentials'));
-  }
-
   const account = await Account.findById(req.params.id);
 
   if (!account) {
     return next(new Error('Not found record with this ID'));
-  }
-
-  const savedUserID = account.user.toString();
-
-  if (savedUserID !== user.id) {
-    return next(new Error('No data with this user ID'));
   }
 
   const updatedAccount = await Account.findOneAndUpdate(
@@ -79,18 +61,10 @@ const updateAccount = async (req, res, next) => {
 };
 
 const deleteAccount = async (req, res, next) => {
-  const user = await User.findById(req.user.id);
-
   const account = await Account.findById(req.params.id);
 
   if (!account) {
-    return next(new Error('Invalid Currency account'));
-  }
-
-  const savedUserID = account.user.toString();
-
-  if (savedUserID !== user.id) {
-    return next(new Error('Invalid user'));
+    return next(new Error('Invalid account ID'));
   }
 
   await account.remove();
