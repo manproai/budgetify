@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "jest": {
+    "testPathIgnorePatterns": ["client/", "routes/financial"],
+    "coveragePathIgnorePatterns": ["client/", "routes/financial"],
+    "modulePathIgnorePatterns": ["client/", "routes/financial"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ]
+    },
   "scripts": {
     "start": "node server.js",
     "test": "node node_modules/jest/bin/jest.js --coverage --detectOpenHandles "
