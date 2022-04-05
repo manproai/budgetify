@@ -11,6 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -23,6 +24,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    LayoutModule,
   ],
   providers: [
     {

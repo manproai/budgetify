@@ -11,10 +11,10 @@ export class AppComponent {
   title = 'client';
   constructor(private authService: AuthService, private router: Router){}
 
-  get isLogged() {
+  get isLogged(): boolean {
     return this.authService.isLogged();
   }
-  logout(){
+  logout() {
     this.authService.logout();
     this.router.navigateByUrl('/login')
   }

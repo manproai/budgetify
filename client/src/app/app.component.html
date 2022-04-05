@@ -1,4 +1,16 @@
-<button routerLink="/todo" *ngIf="isLogged">ToDo</button>
-<button routerLink="/login" *ngIf="!isLogged">Login</button>
-<button *ngIf="isLogged" (click)="logout()">Logout</button>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav">
+    <mat-sidenav class="sidenav__aside" #aside>
+        <app-menu></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav__content">
+        <section class="sidenav__main-content">
+            <app-header [isLogged]="isLogged" (menuButtonClicked)="aside.toggle()" (loggedOutClicked)="logout()">
+            </app-header>
+            <button routerLink="/todo" *ngIf="isLogged">ToDo</button>
+            <button *ngIf="isLogged" (click)="logout()">Logout</button>
+            <router-outlet></router-outlet>
+        </section>
+        <app-footer class="sidenav__footer"></app-footer>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
