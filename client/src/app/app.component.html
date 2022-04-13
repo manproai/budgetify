@@ -4,6 +4,7 @@
     </mat-sidenav>
     <mat-sidenav-content class="sidenav__content">
         <section class="sidenav__main-content">
+            <app-spinner *ngIf="isSpinnerVisible"></app-spinner>
             <app-header [isLogged]="isLogged" (menuButtonClicked)="aside.toggle()" (loggedOutClicked)="logout()">
             </app-header>
             <button routerLink="/todo" *ngIf="isLogged">ToDo</button>
