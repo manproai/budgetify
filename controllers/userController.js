@@ -9,30 +9,38 @@ const createUser = async (req, res, next) => {
   if (error) {
     return next(new Error(error));
   }
-  const { firstName, lastName, email, password, role, dateOfBirth, country } =
-    req.body;
+  const {
+    firstName,
+    lastName,
+    email,
+    password,
+    role,
+    dateOfBirth,
+    country,
+    gender,
+  } = req.body;
 
-  const isUser = await User.findOne({ email });
+  const getAvailableUser = await User.findOne({ email });
 
-  if (isUser) {
+  if (getAvailableUser) {
     return next(
-      new Error(`This ${isUser.role} already exists. Please log in!`)
+      new Error(`This ${getAvailableUser.role} already exists. Please log in!`)
     );
   }
 
   const enryptedPassword = bcrypt.hashSync(password, 10);
+  try {
+    const user = await User.create({
+      firstName,
+      lastName,
+      email,
+      password: enryptedPassword,
+      role,
+      dateOfBirth,
+      country,
+      gender,
+    });
 
-  const user = await User.create({
-    firstName,
-    lastName,
-    email,
-    password: enryptedPassword,
-    role,
-    dateOfBirth,
-    country,
-  });
-
-  if (user) {
     res.status(201).json({
       message: `This ${role} has been successfully created`,
       _id: user.id,
@@ -42,8 +50,8 @@ const createUser = async (req, res, next) => {
       role: user.role,
       token: `Bearer ${getJWTtoken(user)}`,
     });
-  } else {
-    return next(new Error('Invalid data'));
+  } catch (err) {
+    return next(new Error(err));
   }
 };
 
@@ -60,6 +68,7 @@ const loginUser = async (req, res, next) => {
       email: user.email,
       role: user.role,
       token: getJWTtoken(user),
+      expiresIn: process.env.JWT_EXPIRES_IN,
     });
   } else {
     return next(new Error('Invalid credentials'));
