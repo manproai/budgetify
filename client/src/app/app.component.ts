@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   }
 
   get isLogged(): boolean {
-    return this.authService.isLogged();
+    return this.authService.getIsLoggedStatus();
   }
   logout() {
     this.authService.logout();

@@ -1,5 +1,5 @@
+/*  eslint linebreak-style: ["error", "windows"]  */
 const app = require('./app');
-
 
 const port = process.env.PORT || 8000;
 

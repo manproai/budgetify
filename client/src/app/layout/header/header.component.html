@@ -1,3 +1,24 @@
+<header class="header"  *ngIf="isLogged" >
+    <div class="header-logo">
+        <h1 class="header-logo__text">Budgetify</h1>
+    </div>
+    <div class="header-menu">
+        <nav mat-tab-nav-bar class="header-menu__group">
+            <a href="#" mat-tab-link class="link-secondary">Categories</a>
+            <a href="#" mat-tab-link class="link-secondary">Subscribtions</a>
+            <a href="#" mat-tab-link class="link-secondary">Obligatory</a>
+            <a href="#" mat-tab-link class="link-secondary">Statistic</a>
+            <a href="#" mat-tab-link class="link-secondary">Admin</a>
+        </nav>
+    </div>
+    <div class="header-user-logo">
+        <h3 class="header-user-logo__text">Maxim Verenivich</h3>
+        <mat-icon></mat-icon>
+    </div>
+</header>
+
+
+<!-- 
 <header class="header">
     <button *ngIf="isLogged" class="header__icon-button" mat-icon-button (click)="menuButtonClicked.emit()">
         <mat-icon>menu</mat-icon>
@@ -8,4 +29,4 @@
     <div *ngIf="isLogged" class="header__logout">
         <a href="#" (click)="onClick()">Logout</a>
     </div>
-</header>
+</header> -->

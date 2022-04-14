@@ -1,9 +1,9 @@
+/*  eslint linebreak-style: ["error", "windows"]  */
 const express = require('express');
 const auth = require('../../middlewares/passportAuth');
 
 const router = express.Router();
 router.use(auth);
-
 
 router.get('/', (req, res) => {
   res.send('Hello World! [GET from statistics.js]');

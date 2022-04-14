@@ -1,3 +1,4 @@
+/*  eslint linebreak-style: ["error", "windows"]  */
 const Joi = require('joi');
 
 const validateUser = Joi.object({
