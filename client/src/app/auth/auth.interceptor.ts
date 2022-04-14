@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    if (this.authService.isLogged()) {
+    if (this.authService.getIsLoggedStatus ()) {
       const jwt = localStorage.getItem('idToken');
       const cloned = request.clone({
         headers: request.headers.set('Auth', String(jwt)),

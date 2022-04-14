@@ -18,7 +18,17 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [TodoComponent, TodoListComponent, CreateTodoComponent, SearchTodoComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule, ReactiveFormsModule],
+  declarations: [
+    TodoComponent,
+    TodoListComponent,
+    CreateTodoComponent,
+    SearchTodoComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    SharedModule,
+    ReactiveFormsModule,
+  ],
 })
 export class TodoModule {}

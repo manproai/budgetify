@@ -50,7 +50,6 @@ export class TodoService {
       expireAt: new Date(2022, 4, 9).toISOString(),
       isDone: true,
     },
-    
   ];
   constructor() {}
 
@@ -64,16 +63,18 @@ export class TodoService {
     return new Observable((subscriber: Subscriber<string>) => {
       subscriber.next('Success');
     }).pipe(
-      delay(1000), 
+      delay(1000),
       tap(() => {
         this.todoTasks.push(newToDo);
         this.todoTasks$.next([...this.todoTasks]);
       })
-    )
+    );
   }
 
   searchTodo(str: string) {
-    const filteredTasks = this.todoTasks.filter((todoItem: ITodoItem) => todoItem.name.includes(str));
-    this.todoTasks$.next(filteredTasks)
+    const filteredTasks = this.todoTasks.filter((todoItem: ITodoItem) =>
+      todoItem.name.includes(str)
+    );
+    this.todoTasks$.next(filteredTasks);
   }
 }

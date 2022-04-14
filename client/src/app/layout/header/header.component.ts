@@ -11,7 +11,7 @@ export class HeaderComponent {
   @Output() loggedOutClicked: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() {}
-  
+
   onClick(): boolean {
     this.loggedOutClicked.emit();
     return false;

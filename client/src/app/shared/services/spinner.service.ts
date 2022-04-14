@@ -11,10 +11,10 @@ export class SpinnerService {
   constructor() {}
 
   getIsSpinnerVisible$() {
-    return this.isSpinnerVisible$.asObservable().pipe(
-      observeOn(asyncScheduler)
-    )
-  };
+    return this.isSpinnerVisible$
+      .asObservable()
+      .pipe(observeOn(asyncScheduler));
+  }
 
   showSpinner() {
     this.isSpinnerVisible$.next(true);

@@ -19,7 +19,10 @@ export class CreateTodoComponent {
     description: new FormControl('', [Validators.required]),
     expireAt: new FormControl('', [Validators.required]),
   });
-  constructor(private todoService: TodoService, private spinnerService: SpinnerService) {}
+  constructor(
+    private todoService: TodoService,
+    private spinnerService: SpinnerService
+  ) {}
 
   onSubmit(formRef: FormGroupDirective) {
     const { value } = this.createForm;
@@ -36,7 +39,6 @@ export class CreateTodoComponent {
       console.log(result);
       this.createForm.reset();
       formRef.resetForm();
-    })
-    
+    });
   }
 }

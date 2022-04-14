@@ -17,7 +17,7 @@ export class AuthService {
       .pipe(tap((res) => this.setSesstion(res)));
   }
 
-  isLogged(): boolean {
+  getIsLoggedStatus (): boolean {
     const expiresIn = localStorage.getItem('expiresIn');
     if (expiresIn) {
       return Date.now() < Number(expiresIn);
