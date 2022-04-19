@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { catchError, Observable, Subscriber, tap, throwError } from 'rxjs';
+import { IAuth } from '../models/auth.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,14 +11,17 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post('http://localhost:3000/users/login', {
+      .post<IAuth>('http://localhost:3000/users/login', {
         email,
         password,
       })
-      .pipe(tap((res) => this.setSesstion(res)));
+      .pipe(
+        tap((res: IAuth) => this.setSesstion(res)),
+        catchError((err) => throwError(() => '401'))
+      );
   }
 
-  getIsLoggedStatus (): boolean {
+  getIsLoggedStatus(): boolean {
     const expiresIn = localStorage.getItem('expiresIn');
     if (expiresIn) {
       return Date.now() < Number(expiresIn);
@@ -30,7 +34,7 @@ export class AuthService {
     localStorage.removeItem('idToken');
   }
 
-  private setSesstion(res: any) {
+  private setSesstion(res: IAuth) {
     const expiresIn = Date.now() + Number(res.expiresIn);
     localStorage.setItem('idToken', res.token);
     localStorage.setItem('expiresIn', String(expiresIn));

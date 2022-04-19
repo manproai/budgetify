@@ -5,10 +5,9 @@
     <mat-sidenav-content class="sidenav__content">
         <section class="sidenav__main-content">
             <app-spinner *ngIf="isSpinnerVisible"></app-spinner>
+            <button (click)="healthCheck()" class="sidenav__main-content-button">Test</button>
             <app-header [isLogged]="isLogged" (menuButtonClicked)="aside.toggle()" (loggedOutClicked)="logout()">
             </app-header>
-            <button routerLink="/todo" *ngIf="isLogged">ToDo</button>
-            <button *ngIf="isLogged" (click)="logout()">Logout</button>
             <router-outlet></router-outlet>
         </section>
         <app-footer class="sidenav__footer"></app-footer>

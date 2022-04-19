@@ -18,11 +18,16 @@ export class AuthFormComponent {
     ]),
   });
 
-  onSubmit() {
+  onSubmit(): void {
     const { email, password } = this.loginForm.value;
 
-    this.authService.login(email, password).subscribe((data) => {
-      this.router.navigateByUrl('/todo');
-    });
+    this.authService.login(email, password).subscribe(
+      (data) => {
+        this.router.navigateByUrl('/todo');
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

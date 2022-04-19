@@ -2,15 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateTodoComponent } from './create-todo.component';
 
-describe('CreateTodoComponent', () => {
+xdescribe('CreateTodoComponent', () => {
   let component: CreateTodoComponent;
   let fixture: ComponentFixture<CreateTodoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateTodoComponent ]
-    })
-    .compileComponents();
+      declarations: [CreateTodoComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

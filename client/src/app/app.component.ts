@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth/services/auth.service';
 import { SpinnerService } from './shared/services/spinner.service';
+import { TodoService } from './todo/services/todo.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private spinnerService: SpinnerService
+    private spinnerService: SpinnerService,
+    private todoService: TodoService,
   ) {}
 
   ngOnInit(): void {
@@ -26,8 +28,21 @@ export class AppComponent implements OnInit {
   get isLogged(): boolean {
     return this.authService.getIsLoggedStatus ();
   }
-  logout() {
+  logout(): void {
     this.authService.logout();
     this.router.navigateByUrl('/login');
+  }
+
+  healthCheck() {
+    this.todoService.createToDo(
+      {
+        name: 'Test',
+        description: 'this is test description',
+        createdAt: new Date().toISOString(),
+        expireAt: new Date(2022, 4, 9).toISOString(),
+        isDone: false,
+      }
+    ).subscribe((res) => console.log(res)
+    );
   }
 }

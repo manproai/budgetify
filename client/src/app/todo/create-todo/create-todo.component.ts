@@ -5,7 +5,6 @@ import {
   FormGroupDirective,
   Validators,
 } from '@angular/forms';
-import { SpinnerService } from 'src/app/shared/services/spinner.service';
 import { TodoService } from '../services/todo.service';
 
 @Component({
@@ -19,10 +18,7 @@ export class CreateTodoComponent {
     description: new FormControl('', [Validators.required]),
     expireAt: new FormControl('', [Validators.required]),
   });
-  constructor(
-    private todoService: TodoService,
-    private spinnerService: SpinnerService
-  ) {}
+  constructor(private todoService: TodoService) {}
 
   onSubmit(formRef: FormGroupDirective) {
     const { value } = this.createForm;
@@ -33,10 +29,8 @@ export class CreateTodoComponent {
       expireAt: value.expireAt,
       isDone: false,
     };
-    this.spinnerService.showSpinner();
-    console.log(this.createForm.value);
+
     this.todoService.createToDo(newToDo).subscribe((result: string) => {
-      console.log(result);
       this.createForm.reset();
       formRef.resetForm();
     });

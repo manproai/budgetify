@@ -11,7 +11,7 @@ import { SearchTodoComponent } from './search-todo/search-todo.component';
 
 const routes: Routes = [
   {
-    path: 'todo',
+    path: '',
     component: TodoComponent,
     canActivate: [AuthGuard],
   },
