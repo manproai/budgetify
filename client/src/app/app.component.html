@@ -1,11 +1,15 @@
-<h1>Hello World!</h1>
-
-<div class="example-button-row">
-  <button mat-raised-button>Basic</button>
-  <button mat-raised-button color="primary">Primary</button>
-  <button mat-raised-button color="accent">Accent</button>
-  <button mat-raised-button color="warn">Warn</button>
-  <button mat-raised-button disabled>Disabled</button>
-</div>
-
-<mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
+<mat-sidenav-container class="sidenav">
+    <mat-sidenav class="sidenav__aside" #aside>
+        <app-menu></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav__content">
+        <section class="sidenav__main-content">
+            <app-spinner *ngIf="isSpinnerVisible"></app-spinner>
+            <button (click)="healthCheck()" class="sidenav__main-content-button">Test</button>
+            <app-header [isLogged]="isLogged" (menuButtonClicked)="aside.toggle()" (loggedOutClicked)="logout()">
+            </app-header>
+            <router-outlet></router-outlet>
+        </section>
+        <app-footer class="sidenav__footer"></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>
