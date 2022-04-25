@@ -20,7 +20,7 @@ export class CreateTodoComponent {
   });
   constructor(private todoService: TodoService) {}
 
-  onSubmit(formRef: FormGroupDirective) {
+  onSubmit(formRef: FormGroupDirective): void {
     const { value } = this.createForm;
     const newToDo = {
       name: value.name,

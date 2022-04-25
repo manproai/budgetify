@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
-  healthCheck() {
+  healthCheck(): void {
     this.todoService.createToDo(
       {
         name: 'Test',

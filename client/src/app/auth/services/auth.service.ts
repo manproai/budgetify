@@ -9,7 +9,7 @@ import { IAuth } from '../models/auth.model';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  login(email: string, password: string) {
+  login(email: string, password: string): Observable<IAuth> {
     return this.http
       .post<IAuth>('http://localhost:3000/users/login', {
         email,
@@ -29,12 +29,12 @@ export class AuthService {
     return false;
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem('expiresIn');
     localStorage.removeItem('idToken');
   }
 
-  private setSesstion(res: IAuth) {
+  private setSesstion(res: IAuth): void {
     const expiresIn = Date.now() + Number(res.expiresIn);
     localStorage.setItem('idToken', res.token);
     localStorage.setItem('expiresIn', String(expiresIn));

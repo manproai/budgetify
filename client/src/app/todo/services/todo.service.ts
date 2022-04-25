@@ -55,11 +55,11 @@ export class TodoService {
 
   todoTasks$: Subject<ITodoItem[]> = new BehaviorSubject([...this.todoTasks]);
 
-  getTodoTasks() {
+  getTodoTasks(): Observable<ITodoItem[]> {
     return this.todoTasks$.asObservable().pipe(delay(1500));
   }
 
-  createToDo(newToDo: ITodoItem) {
+  createToDo(newToDo: ITodoItem): Observable<any> {
     return new Observable((subscriber: Subscriber<string>) => {
       subscriber.next('Success');
     }).pipe(
@@ -71,7 +71,7 @@ export class TodoService {
     );
   }
 
-  searchTodo(str: string) {
+  searchTodo(str: string): void {
     const filteredTasks = this.todoTasks.filter((todoItem: ITodoItem) =>
       todoItem.name.includes(str)
     );
